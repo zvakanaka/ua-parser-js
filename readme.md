@@ -3,7 +3,7 @@
 <hr>
 
 ## NOTE: This fork allows parsing `?ua=` in the query string
-## [Example](https://zvakanaka.github.io/ua-parser-js?ua=Mozilla/5.0%20(X11;%20Linux%20i686)%20AppleWebKit/535.7%20(KHTML,%20like%20Gecko)%20Ubuntu/11.10%20Chromium/16.0.912.21%20Chrome/16.0.912.21%20Safari/535.7)
+## [Example](https://zvakanaka.github.io/ua-parser-js/?ua=Mozilla/5.0%20(X11;%20Linux%20i686)%20AppleWebKit/535.7%20(KHTML,%20like%20Gecko)%20Ubuntu/11.10%20Chromium/16.0.912.21%20Chrome/16.0.912.21%20Safari/535.7)
 <hr>
 <img align="right" src="https://raw.githubusercontent.com/faisalman/ua-parser-js/gh-pages/images/logo.png"> A JavaScript-based User-Agent string parser. Can be used either in browser (client-side) or in node.js (server-side) environment. Also available as jQuery/Zepto plugin, Bower/Meteor package, & RequireJS/AMD module. This library aims to identify detailed type of web browser, layout engine, operating system, cpu architecture, and device type/model, entirely from user-agent string with a relatively small footprint (~17KB when minified / ~6KB gzipped). Written in vanilla JavaScript, which means it doesn't require any other library and can be used independently. However, it's not recommended to use this library as browser detection since the result may not be more accurate than using feature detection.
 
