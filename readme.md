@@ -1,5 +1,10 @@
 # UAParser.js
 
+<hr>
+
+## NOTE: This fork allows parsing `?ua=` in the query string
+## [Example](https://zvakanaka.github.io/ua-parser-js?ua=Mozilla/5.0%20(X11;%20Linux%20i686)%20AppleWebKit/535.7%20(KHTML,%20like%20Gecko)%20Ubuntu/11.10%20Chromium/16.0.912.21%20Chrome/16.0.912.21%20Safari/535.7)
+<hr>
 <img align="right" src="https://raw.githubusercontent.com/faisalman/ua-parser-js/gh-pages/images/logo.png"> A JavaScript-based User-Agent string parser. Can be used either in browser (client-side) or in node.js (server-side) environment. Also available as jQuery/Zepto plugin, Bower/Meteor package, & RequireJS/AMD module. This library aims to identify detailed type of web browser, layout engine, operating system, cpu architecture, and device type/model, entirely from user-agent string with a relatively small footprint (~17KB when minified / ~6KB gzipped). Written in vanilla JavaScript, which means it doesn't require any other library and can be used independently. However, it's not recommended to use this library as browser detection since the result may not be more accurate than using feature detection.
 
 [![Build Status](https://travis-ci.org/faisalman/ua-parser-js.svg?branch=master)](https://travis-ci.org/faisalman/ua-parser-js)
@@ -9,7 +14,7 @@
 [![CDNJS](https://img.shields.io/cdnjs/v/UAParser.js.svg)](https://cdnjs.com/libraries/UAParser.js)
 
 * Author    : Faisal Salman <<f@faisalman.com>>
-* Demo      : http://faisalman.github.io/ua-parser-js
+* (*modified by zvakanaka*) Demo      : http://zvakanaka.github.io/ua-parser-js
 * Source    : https://github.com/faisalman/ua-parser-js
 
 # Constructor
@@ -27,26 +32,26 @@
 
 ```sh
 # Possible 'browser.name':
-2345Explorer, 360 Browser, Amaya, Android Browser, Arora, Avant, Avast, AVG, 
-BIDUBrowser, Baidu, Basilisk, Blazer, Bolt, Brave, Bowser, Camino, Chimera, 
-Chrome Headless, Chrome WebView, Chrome, Chromium, Comodo Dragon, Dillo, 
-Dolphin, Doris, Edge, Epiphany, Facebook, Falkon, Fennec, Firebird, Firefox, 
-Flock, GSA, GoBrowser, ICE Browser, IE, IEMobile, IceApe, IceCat, IceDragon, 
-Iceape, Iceweasel, Iridium, Iron, Jasmine, K-Meleon, Kindle, Konqueror, 
-LBBROWSER Line, Links, Lunascape, Lynx, MIUI Browser, Maemo Browser, Maemo, 
-Maxthon, MetaSr Midori, Minimo, Mobile Safari, Mosaic, Mozilla, NetFront, 
-NetSurf, Netfront, Netscape, NokiaBrowser, Oculus Browser, OmniWeb, 
-Opera Coast, Opera Mini, Opera Mobi, Opera Tablet, Opera, PaleMoon, PhantomJS, 
-Phoenix, Polaris, Puffin, QQ, QQBrowser, QQBrowserLite, Quark, QupZilla, 
-RockMelt, Safari, Sailfish Browser, Samsung Browser, SeaMonkey, Silk, Skyfire, 
-Sleipnir, Slim, SlimBrowser, Swiftfox, Tizen Browser, UCBrowser, Vivaldi, 
+2345Explorer, 360 Browser, Amaya, Android Browser, Arora, Avant, Avast, AVG,
+BIDUBrowser, Baidu, Basilisk, Blazer, Bolt, Brave, Bowser, Camino, Chimera,
+Chrome Headless, Chrome WebView, Chrome, Chromium, Comodo Dragon, Dillo,
+Dolphin, Doris, Edge, Epiphany, Facebook, Falkon, Fennec, Firebird, Firefox,
+Flock, GSA, GoBrowser, ICE Browser, IE, IEMobile, IceApe, IceCat, IceDragon,
+Iceape, Iceweasel, Iridium, Iron, Jasmine, K-Meleon, Kindle, Konqueror,
+LBBROWSER Line, Links, Lunascape, Lynx, MIUI Browser, Maemo Browser, Maemo,
+Maxthon, MetaSr Midori, Minimo, Mobile Safari, Mosaic, Mozilla, NetFront,
+NetSurf, Netfront, Netscape, NokiaBrowser, Oculus Browser, OmniWeb,
+Opera Coast, Opera Mini, Opera Mobi, Opera Tablet, Opera, PaleMoon, PhantomJS,
+Phoenix, Polaris, Puffin, QQ, QQBrowser, QQBrowserLite, Quark, QupZilla,
+RockMelt, Safari, Sailfish Browser, Samsung Browser, SeaMonkey, Silk, Skyfire,
+Sleipnir, Slim, SlimBrowser, Swiftfox, Tizen Browser, UCBrowser, Vivaldi,
 Waterfox, WeChat, Yandex, baidu, iCab, w3m, ...
 
 # 'browser.version' determined dynamically
 ```
 
 * `getDevice()`
-    * returns `{ model: '', type: '', vendor: '' }` 
+    * returns `{ model: '', type: '', vendor: '' }`
 
 ```sh
 # Possible 'device.type':
@@ -66,7 +71,7 @@ RIM, Samsung, Sharp, Siemens, Sony[Ericsson], Sprint, Xbox, Xiaomi, ZTE, ...
 
 ```sh
 # Possible 'engine.name'
-Amaya, Blink, EdgeHTML, Gecko, Goanna, iCab, KHTML, Links, Lynx, NetFront, 
+Amaya, Blink, EdgeHTML, Gecko, Goanna, iCab, KHTML, Links, Lynx, NetFront,
 NetSurf, Presto, Tasman, Trident, w3m, WebKit
 
 # 'engine.version' determined dynamically
@@ -77,12 +82,12 @@ NetSurf, Presto, Tasman, Trident, w3m, WebKit
 
 ```sh
 # Possible 'os.name'
-AIX, Amiga OS, Android, Arch, Bada, BeOS, BlackBerry, CentOS, Chromium OS, 
-Contiki, Fedora, Firefox OS, FreeBSD, Debian, DragonFly, Fuchsia, Gentoo, GNU, 
-Haiku, Hurd, iOS, Joli, KaiOS, Linpus, Linux, Mac OS, Mageia, Mandriva, MeeGo, 
-Minix, Mint, Morph OS, NetBSD, Nintendo, OpenBSD, OpenVMS, OS/2, Palm, PC-BSD, 
-PCLinuxOS, Plan9, Playstation, QNX, RedHat, RIM Tablet OS, RISC OS, Sailfish, 
-Series40, Slackware, Solaris, SUSE, Symbian, Tizen, Ubuntu, Unix, VectorLinux, 
+AIX, Amiga OS, Android, Arch, Bada, BeOS, BlackBerry, CentOS, Chromium OS,
+Contiki, Fedora, Firefox OS, FreeBSD, Debian, DragonFly, Fuchsia, Gentoo, GNU,
+Haiku, Hurd, iOS, Joli, KaiOS, Linpus, Linux, Mac OS, Mageia, Mandriva, MeeGo,
+Minix, Mint, Morph OS, NetBSD, Nintendo, OpenBSD, OpenVMS, OS/2, Palm, PC-BSD,
+PCLinuxOS, Plan9, Playstation, QNX, RedHat, RIM Tablet OS, RISC OS, Sailfish,
+Series40, Slackware, Solaris, SUSE, Symbian, Tizen, Ubuntu, Unix, VectorLinux,
 WebOS, Windows [Phone/Mobile], Zenwalk, ...
 
 # 'os.version' determined dynamically
@@ -245,7 +250,7 @@ $ npm install --save @types/ua-parser-js
 
 ## Using jQuery/Zepto ($.ua)
 
-Although written in vanilla js (which means it doesn't depends on jQuery), this library will automatically detect if jQuery/Zepto is present and create `$.ua` object based on browser's user-agent (although in case you need, `window.UAParser` constructor is still present). To get/set user-agent you can use: `$.ua.get()` / `$.ua.set(uastring)`. 
+Although written in vanilla js (which means it doesn't depends on jQuery), this library will automatically detect if jQuery/Zepto is present and create `$.ua` object based on browser's user-agent (although in case you need, `window.UAParser` constructor is still present). To get/set user-agent you can use: `$.ua.get()` / `$.ua.set(uastring)`.
 
 ```js
 // In browser with default user-agent: 'Mozilla/5.0 (Linux; U; Android 2.3.4; en-us; Sprint APA7373KT Build/GRJ22) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0':
